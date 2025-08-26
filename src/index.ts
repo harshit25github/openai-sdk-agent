@@ -3,8 +3,10 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-import OpenAI from 'openai';
+
 import { search_flights_cheapoair, search_hotels_cheapoair, search_cars_cheapoair } from './tools';
+
+
 
 
 import {
@@ -80,6 +82,47 @@ async function main() {
     // for (const t of finalText) console.log(`assistant> ${t}`);
 
     // Optional: surface any URL citations (from hosted web search)
+
+   
+//      let outputText = result.finalOutput ?? extractAllTextOutput(result.newItems);
+
+// // 2) If the model added prose, try to pull the first JSON object
+// const maybeJson = extractFirstJson(outputText);
+// if (maybeJson) outputText = maybeJson;
+
+// // 3) Validate and auto-repair if needed (up to 2 attempts)
+// let check = needsRepair(outputText);
+// for (let attempt = 0; attempt < 2 && !check.ok; attempt++) {
+//   console.log(`(auto-repair: ${check.reason}${check.targetDays ? ' → ' + check.targetDays + ' days' : ''})`);
+//   const repairInstruction = makeRepairInstruction(check.reason!, check.targetDays);
+//   const repair = await runner.run(agent, result.history.concat(user(repairInstruction)));
+//   thread = repair.history;
+
+//   outputText = repair.finalOutput ?? extractAllTextOutput(repair.newItems);
+//   const maybeJson2 = extractFirstJson(outputText);
+//   if (maybeJson2) outputText = maybeJson2;
+
+//   check = needsRepair(outputText);
+// }
+
+// // 4) Print the final (validated) JSON or the best we got
+// console.log('assistant>', outputText);
+
+// // 5) (Optional) also print any URL citations discovered in the model items
+// const urls = new Set<string>();
+// for (const item of (result.output ?? [])) {
+//   if (item.type !== 'message') continue;
+//   for (const block of item.content ?? []) {
+//     if (typeof block !== 'string' && block.type === 'output_text') {
+//         //@ts-ignore                  // <-- safe: now a typed block
+//       for (const ann of block.annotations ?? []) {
+//         if (ann.type === 'url_citation' && ann.url) urls.add(ann.url);
+//       }
+//     }
+//   }
+// }
+
+    //#endregion
    for (const item of result.output ?? []) {
   if (item.type !== 'message') continue;
   for (const block of item.content ?? []) {
