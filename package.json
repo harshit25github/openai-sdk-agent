@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node dist/main.js",
     "dev": "ts-node src/i.ts",
-    "session":"ts-node src/index.ts"
+    "session":"ts-node src/index.ts",
+    "multiagent":"ts-node src/multiagent/index.ts"
     
   },
   "dependencies": {

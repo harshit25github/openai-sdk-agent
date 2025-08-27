@@ -48,7 +48,7 @@ async function saveThread() {
 }
 
 async function main() {
-
+  
   await loadThread();
 
   const rl = readline.createInterface({ input, output });
