@@ -7,12 +7,13 @@
     "build": "tsc",
     "start": "node dist/main.js",
     "dev": "ts-node src/i.ts",
-    "session":"ts-node src/index.ts",
-    "multiagent":"ts-node src/multiagent/index.ts"
-    
+    "session": "ts-node src/index.ts",
+    "multiagent": "ts-node src/multiagent/index.ts",
+    "multiagent-gaurdrail": "ts-node src/multiagent/multiagent-gaurdrail.ts"
   },
   "dependencies": {
     "@openai/agents": "^0.0.17",
+    "@openai/agents-core": "^0.0.17",
     "chalk": "^4.1.2",
     "dotenv": "^16.3.1",
     "openai": "^4.20.1",
